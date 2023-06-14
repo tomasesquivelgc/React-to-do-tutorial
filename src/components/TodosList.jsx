@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
-const TodosList = ({ todosProps, setTodos }) => {
+const TodosList = ({ todosProps, setTodos }) => (
   <ul>
     {todosProps.map((todo) => (
       <TodoItem key={todo.id} itemProp={todo} setTodos={setTodos} />
     ))}
-  </ul>;
-};
+  </ul>
+);
 
 TodosList.propTypes = {
   todosProps: PropTypes.arrayOf(
@@ -16,6 +16,7 @@ TodosList.propTypes = {
       title: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  setTodos: PropTypes.func.isRequired,
 };
 
 export default TodosList;
